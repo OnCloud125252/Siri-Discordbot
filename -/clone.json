@@ -1,0 +1,583 @@
+{
+    "_id": {
+        "$oid": "5f4e4d3ddb1bb73e2e0ad1d2"
+    },
+    "domain": "scamadviser.com",
+    "created_at": 1598967101,
+    "facebook_comments": {
+        "request_id": "1637705381",
+        "total_count": 99,
+        "negative": {
+            "comment_count": 13,
+            "unique_user_count": 10
+        },
+        "positive": {
+            "comment_count": 2,
+            "unique_user_count": 2
+        },
+        "neutral": {
+            "comment_count": 1,
+            "unique_user_count": 1
+        },
+        "unknown": {
+            "comment_count": 83,
+            "unique_user_count": 63
+        }
+    },
+    "ip_bad_count": {
+        "request_id": "1637705381",
+        "total": 7,
+        "bad": 0
+    },
+    "ssl": {
+        "request_id": "1637693461",
+        "valid": true,
+        "type": "OV",
+        "issuer": "Cloudflare, Inc."
+    },
+    "dnsblock": {
+        "request_id": "1637705381",
+        "threat": {
+            "count": 0,
+            "blocked_by": []
+        },
+        "adult": {
+            "count": 0,
+            "blocked_by": []
+        }
+    },
+    "whois": {
+        "request_id": "1637705381",
+        "source": "whois.eurodns.com",
+        "domain_result": "scamadviser.com",
+        "domain_extension": "com",
+        "domain_status": [
+            "clienttransferprohibited"
+        ],
+        "name_servers": [
+            "naomi.ns.cloudflare.com",
+            "nick.ns.cloudflare.com"
+        ],
+        "registration_created": "2011-07-05",
+        "registration_updated": "2021-06-04",
+        "registration_expires": "2022-07-05",
+        "anonymous_whois": true,
+        "registrant": {
+            "name": "Whois Privacy",
+            "company": "Whois Privacy (enumDNS dba)",
+            "address": "BPM 333868, Banzelt 4 A 6921 Root-sur-Syre",
+            "country": "LU",
+            "email": "135c066fa0aec13f_o@whoisprivacy.com",
+            "valid_email": true,
+            "valid_mx_record": true,
+            "phone": "+352.27720304"
+        },
+        "administrative": {
+            "name": "Whois Privacy",
+            "company": "Whois Privacy (enumDNS dba)",
+            "address": "BPM 333868, Banzelt 4 A 6921 Root-sur-Syre",
+            "country": "LU",
+            "email": "135c066fa0aec13f_a@whoisprivacy.com",
+            "valid_email": true,
+            "valid_mx_record": true,
+            "phone": "+352.27720304"
+        },
+        "technical": {
+            "name": "Whois Privacy",
+            "company": "Whois Privacy (enumDNS dba)",
+            "address": "BPM 333868, Banzelt 4 A 6921 Root-sur-Syre",
+            "country": "LU",
+            "email": "135c066fa0aec13f_t@whoisprivacy.com",
+            "valid_email": true,
+            "valid_mx_record": true,
+            "phone": "+352.27720304"
+        },
+        "registrar": {
+            "name": "Eurodns S.A.",
+            "iana_id": "1052",
+            "website": "http://www.eurodns.com",
+            "email": "legalservices@eurodns.com",
+            "valid_email": true,
+            "valid_mx_record": true,
+            "phone": "+352.27220150"
+        }
+    },
+    "alexa": {
+        "request_id": "1637705381",
+        "rank": 2811,
+        "backlinks": 860
+    },
+    "reviews": [
+        {
+            "request_id": "1637705381",
+            "source": "WebwinkelKeur",
+            "source_url": null,
+            "count": null,
+            "avg_score": null
+        },
+        {
+            "request_id": "1637705381",
+            "source": "TrustProfile",
+            "source_url": "https://www.trustprofile.com/webshop/ScamAdviser-com_4001501",
+            "count": 0,
+            "avg_score": 0
+        },
+        {
+            "request_id": "1637705381",
+            "source": "Google Shopping",
+            "source_url": null,
+            "count": null,
+            "avg_score": null
+        },
+        {
+            "request_id": "1637705381",
+            "source": "Scamadviser",
+            "source_url": "https://www.scamadviser.com/check-website/scamadviser.com",
+            "count": 363,
+            "avg_score": 4.6,
+            "count_score_1": 24,
+            "count_score_2": 5,
+            "count_score_3": 5,
+            "count_score_4": 24,
+            "count_score_5": 305
+        },
+        {
+            "request_id": "1637705381",
+            "source": "Sitejabber",
+            "source_url": "https://www.sitejabber.com/reviews/scamadviser.com",
+            "count": 155,
+            "avg_score": 3.95,
+            "count_score_1": 42,
+            "count_score_2": 1,
+            "count_score_3": 1,
+            "count_score_4": 12,
+            "count_score_5": 85
+        },
+        {
+            "request_id": "1637705381",
+            "source": "Trustpilot",
+            "source_url": "https://www.trustpilot.com/review/scamadviser.com",
+            "count": 438,
+            "avg_score": 4.1,
+            "count_score_1": 108,
+            "count_score_2": 1,
+            "count_score_3": 13,
+            "count_score_4": 41,
+            "count_score_5": 275
+        },
+        {
+            "request_id": "1637705381",
+            "source": "MyWOT",
+            "source_url": "https://www.mywot.com/scorecard/scamadviser.com",
+            "count": 294,
+            "avg_score": 4.2
+        }
+    ],
+    "scamadviser_votes": {
+        "request_id": "1637705381",
+        "source": "Scamadviser",
+        "source_url": "https://www.scamadviser.com/check-website/scamadviser.com",
+        "count_legit": 88,
+        "count_scam": 186,
+        "count_fake": 101
+    },
+    "builtwith": {
+        "request_id": "1637705381",
+        "updated_at": null,
+        "affiliatelinks": null,
+        "technology_spend": null,
+        "ecommerce": null,
+        "parked": null
+    },
+    "networkinfo": {
+        "request_id": "1637705381",
+        "request_http_status": 200,
+        "request_duration": 1231,
+        "http_headers": {
+            "Date": [
+                "Tue, 23 Nov 2021 22:09:43 GMT"
+            ],
+            "Content-Type": [
+                "text/html; charset=UTF-8"
+            ],
+            "Transfer-Encoding": [
+                "chunked"
+            ],
+            "Connection": [
+                "keep-alive"
+            ],
+            "Cache-Control": [
+                "private, max-age=0, must-revalidate, no-cache, no-store"
+            ],
+            "Display": [
+                "pub_site_sol"
+            ],
+            "Expires": [
+                "Mon, 22 Nov 2021 22:09:43 GMT"
+            ],
+            "Pagespeed": [
+                "off"
+            ],
+            "Response": [
+                "200"
+            ],
+            "Set-Cookie": [
+                "ezoadgid_36202=-1; Path=/; Domain=scamadviser.com; Expires=Tue, 23 Nov 2021 22:39:42 UTC",
+                "ezoref_36202=; Path=/; Domain=scamadviser.com; Expires=Wed, 24 Nov 2021 00:09:42 UTC",
+                "ezoab_36202=mod12; Path=/; Domain=scamadviser.com; Expires=Wed, 24 Nov 2021 00:09:42 UTC",
+                "active_template::36202=pub_site.1637705382; Path=/; Domain=scamadviser.com; Expires=Thu, 25 Nov 2021 22:09:42 UTC",
+                "ezopvc_36202=1; Path=/; Domain=scamadviser.com; Expires=Tue, 23 Nov 2021 22:39:43 UTC",
+                "ezepvv=609; Path=/; Domain=scamadviser.com; Expires=Wed, 24 Nov 2021 22:09:43 UTC",
+                "ezovid_36202=1836015367; Path=/; Domain=scamadviser.com; Expires=Tue, 23 Nov 2021 22:39:43 UTC",
+                "lp_36202=https://www.scamadviser.com/; Path=/; Domain=scamadviser.com; Expires=Tue, 23 Nov 2021 22:39:43 UTC",
+                "ezovuuidtime_36202=1637705383; Path=/; Domain=scamadviser.com; Expires=Thu, 25 Nov 2021 22:09:43 UTC",
+                "ezovuuid_36202=585f824c-935d-45ca-4fb9-b81c1afaf1c7; Path=/; Domain=scamadviser.com; Expires=Tue, 23 Nov 2021 22:39:43 UTC",
+                "ezCMPCCS=false; Path=/; Domain=scamadviser.com; Expires=Wed, 23 Nov 2022 22:09:43 GMT",
+                "__cf_bm=dvmlRJReyxkbDus8HGvbnV_046mCk_nmd6FRq05YnQY-1637705383-0-AUEpyBl8qLcKoK98DXuFAJd2U1JhxARm/xSOsAN6brKLtliYfYiLHpoqMRre1D8T9kc68MzGnx4NS86iw6wNG5A=; path=/; expires=Tue, 23-Nov-21 22:39:43 GMT; domain=.scamadviser.com; HttpOnly; Secure; SameSite=None"
+            ],
+            "Strict-Transport-Security": [
+                "max-age=31536000; includeSubDomains; preload"
+            ],
+            "Vary": [
+                "Accept-Encoding",
+                "Accept-Encoding,User-Agent"
+            ],
+            "X-Ezoic-Cdn": [
+                "Miss"
+            ],
+            "X-Middleton-Display": [
+                "pub_site_sol"
+            ],
+            "X-Middleton-Response": [
+                "200"
+            ],
+            "X-Origin-Cache-Control": [
+                "no-cache, private"
+            ],
+            "X-Sol": [
+                "pub_site"
+            ],
+            "CF-Cache-Status": [
+                "DYNAMIC"
+            ],
+            "Expect-CT": [
+                "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+            ],
+            "X-Content-Type-Options": [
+                "nosniff"
+            ],
+            "Server": [
+                "cloudflare"
+            ],
+            "CF-RAY": [
+                "6b2db92ebbcc4c79-AMS"
+            ]
+        },
+        "ip": {
+            "address": "104.22.39.245",
+            "isp": "CloudFlare Inc.",
+            "country": "US"
+        },
+        "nameservers": [
+            {
+                "hostname": "naomi.ns.cloudflare.com.",
+                "ip": {
+                    "address": "173.245.58.208",
+                    "isp": "CloudFlare Inc.",
+                    "country": "US"
+                }
+            },
+            {
+                "hostname": "nick.ns.cloudflare.com.",
+                "ip": {
+                    "address": "173.245.59.213",
+                    "isp": "CloudFlare Inc.",
+                    "country": "US"
+                }
+            }
+        ]
+    },
+    "meta": {
+        "request_id": "1637705381",
+        "url": "scamadviser.com",
+        "title": "Scamadviser.com | Check a website for risk | Check if fraudulent | Website trust reviews |Check website is fake or a scam",
+        "description": "Check if a website is a scam website or a legit website. Scamadviser helps identify if a webshop is fraudulent or infected with malware, or conducts phishing, fraud, scam and spam activities. Use our free trust and site review checker.",
+        "robots": null,
+        "keywords": [
+            "reviews",
+            "stores",
+            "verified reviews",
+            "ratings",
+            "trust reputation",
+            "consumer reviews",
+            "feedback",
+            "customer ratings",
+            "scam reviews",
+            "compare",
+            "hoax",
+            "website",
+            "fraud"
+        ]
+    },
+    "tags": {
+        "request_id": "1637705381",
+        "url": "scamadviser.com",
+        "tags": [
+            {
+                "id": 1092,
+                "name": "Recovery Services - High Risk",
+                "keywords": [
+                    {
+                        "id": 1886,
+                        "value": "scam"
+                    },
+                    {
+                        "id": 1671,
+                        "value": "fraud"
+                    },
+                    {
+                        "id": 1887,
+                        "value": "scams"
+                    },
+                    {
+                        "id": 1885,
+                        "value": "bitcoin"
+                    },
+                    {
+                        "id": 1652,
+                        "value": "Cryptocurrency"
+                    }
+                ],
+                "internal": true
+            },
+            {
+                "id": 1191,
+                "name": "Industry - Essay/Thesis/Dissertation Writers – High Risk",
+                "keywords": [
+                    {
+                        "id": 3031,
+                        "value": "anonymous"
+                    },
+                    {
+                        "id": 3032,
+                        "value": "confidential"
+                    }
+                ],
+                "internal": true
+            },
+            {
+                "id": 1058,
+                "name": "Registration Possible",
+                "keywords": [
+                    {
+                        "id": 589,
+                        "value": "register"
+                    },
+                    {
+                        "id": 590,
+                        "value": "login"
+                    }
+                ],
+                "internal": false
+            },
+            {
+                "id": 1069,
+                "name": "Brands",
+                "keywords": [
+                    {
+                        "id": 619,
+                        "value": "Ray-ban"
+                    }
+                ],
+                "internal": false
+            },
+            {
+                "id": 120,
+                "name": "Industry - Cryptocurrency",
+                "keywords": [
+                    {
+                        "id": 308,
+                        "value": "bitcoin"
+                    }
+                ],
+                "internal": false
+            },
+            {
+                "id": 1064,
+                "name": "Payment Methods - High Risk",
+                "keywords": [
+                    {
+                        "id": 2743,
+                        "value": "bitcoin"
+                    }
+                ],
+                "internal": true
+            },
+            {
+                "id": 1078,
+                "name": "Adult - Dating - High Risk",
+                "keywords": [
+                    {
+                        "id": 2011,
+                        "value": "entertainment"
+                    }
+                ],
+                "internal": true
+            },
+            {
+                "id": 1040,
+                "name": "Travel Services - High Risk",
+                "keywords": [
+                    {
+                        "id": 870,
+                        "value": "advance fee"
+                    }
+                ],
+                "internal": false
+            },
+            {
+                "id": 1046,
+                "name": "Helpdesk",
+                "keywords": [
+                    {
+                        "id": 1683,
+                        "value": "Contact us"
+                    }
+                ],
+                "internal": false
+            },
+            {
+                "id": 1044,
+                "name": "Payment Methods - Reliable",
+                "keywords": [
+                    {
+                        "id": 912,
+                        "value": "paypal"
+                    }
+                ],
+                "internal": false
+            },
+            {
+                "id": 1110,
+                "name": "Language - English",
+                "keywords": [
+                    {
+                        "id": 2379,
+                        "value": "lang=\"en\""
+                    }
+                ],
+                "internal": false
+            }
+        ]
+    },
+    "score": 100,
+    "scores": {
+        "domain": 641,
+        "bad_ip": null
+    },
+    "trustrules": [
+        {
+            "code": 1064,
+            "description": "The registrar of this domain works mainly for high-end brands and companies",
+            "score": 5
+        },
+        {
+            "code": 10,
+            "description": "The owner of the website is using a service to hide their identity",
+            "score": -10
+        },
+        {
+            "code": 1055,
+            "description": "The website is (very) old",
+            "score": 20
+        },
+        {
+            "code": 26,
+            "description": "This website is deemed to be popular by Alexa",
+            "score": 500
+        },
+        {
+            "code": 956,
+            "description": "High number of backlinks",
+            "score": 25
+        },
+        {
+            "code": 1044,
+            "description": "A valid SSL certificate has been identified by Xolphin",
+            "score": 10
+        },
+        {
+            "code": 1041,
+            "description": "This website has received positive reviews",
+            "score": 0
+        },
+        {
+            "code": 996,
+            "description": "This website offers reliable payment methods",
+            "score": 1
+        },
+        {
+            "code": 997,
+            "description": "This website is supporting anonymous payment methods",
+            "score": -10
+        }
+    ],
+    "updated_at": "1637705381",
+    "attributes": {
+        "score": 100,
+        "block_indicator": false,
+        "cannot_be_blacklisted": true,
+        "trust_subdomains": false,
+        "suspicious_feedback": false,
+        "source": "TRANCO"
+    },
+    "pageview": 38302,
+    "redirected_domains": [
+        "scamadvisor.com",
+        "hempelf.co.uk",
+        "scamadviser.com.",
+        "scamadvisors.com",
+        "scamadviser.co.uk",
+        "noreply@scamadviser.com",
+        "forums.scamadviser.com",
+        "scamadviser.org",
+        "www.scamadvisor.com",
+        "www.scamadviser.com.",
+        "www.scam-advisor.com",
+        "scamadviser.com",
+        "www.scamadvisors.com"
+    ],
+    "domain_mutations": {
+        "request_id": "1631699166",
+        "domain_mutations": [
+            {
+                "source": "ANONYMOUS",
+                "source_type": "brand protection",
+                "type": "reported",
+                "reason": "b2b scam",
+                "blacklist": true,
+                "value": -1,
+                "anonymous": true,
+                "created_at": 1631699166
+            }
+        ]
+    },
+    "primarydomain": {
+        "request_id": "1637705381",
+        "primary_domain": null,
+        "score": null,
+        "trust_subdomains": false
+    },
+    "robotstxt": {
+        "request_id": "1637705381",
+        "blocks_search_engines": false
+    },
+    "apwg": {
+        "request_id": "1637705381",
+        "count": 0,
+        "count_confidence_level_50": 0,
+        "count_confidence_level_90": 0,
+        "count_confidence_level_100": 0
+    },
+    "blacklisted": false
+}
