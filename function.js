@@ -1,5 +1,7 @@
 //import shell from "shelljs";
-import axios from "axios";
+import fs from "fs";
+import path from 'path';
+import axios from 'axios';
 
 
 ///Clone github repositories
@@ -115,6 +117,29 @@ export function findurl(text) {
 };
 
 
+///Download discord images
+/*Example*\
+downloadDCimage('https://cdn.discordapp.com/attachments/911456540253380619/916769291033001984/1592057336885.jpg');
+
+/*Output*\
+$Type: String
+@Type: Stream
+└>Image stream
+\*/
+export async function downloadDCimage(url) {
+    try {
+        const response = await axios({
+            url,
+            method: 'GET',
+            responseType: 'stream'
+        });
+        return response.data;
+    } catch (err) {
+        throw new Error(err);
+    }
+}
+
+
 ///Measure the similarity
 /*Example*\
 similar("abcd", "abcc", 3)
@@ -193,6 +218,7 @@ export function check(links) {
     4 for dangerous
     */
     var level = [];
+    var reason = [];
     var hostname = [];
 
     const shortURL = [
@@ -232,38 +258,51 @@ export function check(links) {
     ];
 
     links.forEach(url => {
-        var d = url.split('/')[2]
+        var d = new URL(url).hostname;
         hostname.push((d.indexOf(".") != -1 && !shortURL.includes(d) && !trusted.includes(d)) ? d.substring(d.indexOf("."), 0) : d)
     });
 
     hostname.forEach(d => {
         function warning(x) {
             var warn = false
+            var value = []
             filter.forEach(ele => {
                 if (similar(ele, x, 1) >= 50.0) {
+                    //console.log(similar(ele, x, 1))
+                    value.push(similar(ele, x, 1));
                     warn = true;
                 }
-                //similar(ele, x, 1) >= 50.0 ? true : false;
             })
-            return warn;
+            return {
+                warn: warn,
+                value: value
+            };
         }
         if (trusted.includes(d)) { //OK
             level.push(1);
+            reason.push(1);
         }
         else if (shortURL.includes(d)) { //Short URL
             level.push(2);
+            reason.push(2);
         }
-        else if (warning(d)) { //Warning
+        else if (warning(d).warn) { //Warning
             level.push(3);
+            reason.push(warning(d).value);
+            //Reason
         }
         /**\
         else if (API) { //Dangerous
             level.push(4);
         }
         \**/
-        else {
+        else { //Unknown
             level.push(5);
+            reason.push(5);
         }
     });
-    return level;
+    return {
+        level: level,
+        reason: reason
+    };
 }

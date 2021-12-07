@@ -1,12 +1,17 @@
-const login_info = 'Heroku' //可修改  (Heroku/Terminal)
+const login_info = 'Terminal' //可修改  (Heroku/Terminal)
 const version = '1.0.0' //可修改  (版本)
+const codever = 0
 
 import * as func from './function.js'
-import * as prefix from './prefix.js';
 import { key } from './auth.js';
-import Discord from 'discord.js';
+import { Client, MessageEmbed, MessageAttachment } from 'discord.js';
+import * as prefix from './prefix.js';
+import request from 'request';
+import cheerio from 'cheerio';
 import prettyMS from 'pretty-ms';
-const client = new Discord.Client();
+import path from 'path';
+import fs from 'fs';
+const client = new Client();
 
 /*
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
@@ -29,10 +34,19 @@ else if (login_info === 'Heroku') {
     client.login(process.env.DJS_TOKEN);
 };
 client.on('ready', () => {
-    console.log(`User name :        ${client.user.tag}`);
+    console.log("\n");
+    console.log("::::::::::::::::::::::::::::::::::::");
+    console.log("::                                ::");
+    console.log("::   THIS IS THE BETA VERSION !   ::");
+    console.log("::                                ::");
+    console.log("::::::::::::::::::::::::::::::::::::");
+    console.log("\n");
+    console.log(`User name :        ${client.user.tag}!`);
     console.log(`Login platform :   ${login_info}`);
     console.log(`Time :             ${func.TWtime()}`);
     console.log(`Version :          V ${version}`);
+    console.log();
+    console.log(`Codever = ${codever}`);
     console.log();
     console.log("---------------------- Log ----------------------");
 
@@ -69,7 +83,7 @@ client.on('message', async msg => {
                 case 'ping':
                     msg.channel.send('Caculating ping . . .').then(resultMessage => {
                         const ping = resultMessage.createdTimestamp - msg.createdTimestamp
-                        const emb_ping = new Discord.MessageEmbed()
+                        const emb_ping = new MessageEmbed()
                             .setColor('#4169e1')
                             .setTitle('🏓 Pong !')
                             .setDescription('\u200B')
@@ -78,24 +92,6 @@ client.on('message', async msg => {
                             .setTimestamp();
                         resultMessage.delete();
                         resultMessage.channel.send(emb_ping);
-                    });
-                    break;
-
-                    
-                ///Botinfo
-                case 'botinfo':
-                    msg.channel.send('看到這行的人可以獲得一塊餅乾 ฅ ^• ω •^ ฅ').then(resultMessage => {
-                        const ping = (resultMessage.createdTimestamp - msg.createdTimestamp)
-                        const emb_botinfo = new Discord.MessageEmbed()
-                            .setColor('#4169e1')
-                            .setTitle(`Bot info`)
-                            .addFields({ name: `**Login Platform :**`, value: `\`${login_info}\`` })
-                            .addFields({ name: `Bot latency :`, value: `\`${ping} ms\`` })
-                            .addFields({ name: `API Latency :`, value: `\`${client.ws.ping} ms\`` })
-                            .setFooter(`V ${version}\nUptime : ${prettyMS(client.uptime)}`)
-                            .setTimestamp();
-                        resultMessage.delete();
-                        resultMessage.channel.send(emb_botinfo);
                     });
                     break;
             }
@@ -107,6 +103,16 @@ client.on('message', async msg => {
             msg.delete();
             var response = msg.content.substring(prefix.say.length);
             msg.channel.send(response);
+        }
+
+
+        ///Detect Scam URLs (Alpha)
+        if (msg.content.includes("http")) {
+            var link = func.findurl(msg.content);
+            if (link) {
+                msg.channel.send(func.check(link).level);
+                msg.channel.send(func.check(link).reason);
+            }
         }
 
     } catch (error) {
