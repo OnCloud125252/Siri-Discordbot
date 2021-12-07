@@ -3,7 +3,7 @@ const version = '1.0.0' //可修改  (版本)
 
 import * as func from './function.js'
 import * as prefix from './prefix.js';
-import Discord from 'discord.js';
+import Discord from 'discord.js-12';
 import prettyMS from 'pretty-ms';
 const client = new Discord.Client();
 
