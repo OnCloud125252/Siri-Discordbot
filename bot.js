@@ -3,7 +3,6 @@ const version = '1.0.0' //可修改  (版本)
 
 import * as func from './function.js'
 import * as prefix from './prefix.js';
-import { key } from './auth.js';
 import Discord from 'discord.js';
 import prettyMS from 'pretty-ms';
 const client = new Discord.Client();
@@ -81,7 +80,7 @@ client.on('message', async msg => {
                     });
                     break;
 
-                    
+
                 ///Botinfo
                 case 'botinfo':
                     msg.channel.send('看到這行的人可以獲得一塊餅乾 ฅ ^• ω •^ ฅ').then(resultMessage => {
