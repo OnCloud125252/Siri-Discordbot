@@ -68,7 +68,7 @@ console.log(TWtime());
 export function TWtime() {
     let dateObject_TW = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
     let TimeString = `${dateObject_TW}`;
-    return TimeString;
+    return TimeString + ' (GMT+8)';
 };
 
 
@@ -126,7 +126,7 @@ $Type: String
 @Type: Stream
 └>Image stream
 \*/
-export async function downloadDCimage(url) {
+export async function downloadImage(url) {
     try {
         const response = await axios({
             url,

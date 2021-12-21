@@ -1,17 +1,20 @@
 const login_info = 'Terminal' //可修改  (Heroku/Terminal)
-const version = '1.0.0' //可修改  (版本)
+const version = 'Beta 1.0.0' //可修改  (版本)
 const codever = 0
 
 import * as func from './function.js'
-import { key } from './auth.js';
-import { Client, MessageEmbed, MessageAttachment } from 'discord.js';
 import * as prefix from './prefix.js';
+import Discord from 'discord.js-12';
+import prettyMS from 'pretty-ms';
+import paginationEmbed from 'discord.js-pagination';
+/*
 import request from 'request';
 import cheerio from 'cheerio';
-import prettyMS from 'pretty-ms';
 import path from 'path';
 import fs from 'fs';
-const client = new Client();
+*/
+import key from './auth.js'
+const client = new Discord.Client();
 
 /*
 import { createRequire } from "module"; // Bring in the ability to create the 'require' method
@@ -28,6 +31,7 @@ const fs = require('fs');
 
 ////登入資訊
 if (login_info === 'Terminal') {
+    //import key from './auth.js'
     client.login(key);
 }
 else if (login_info === 'Heroku') {
@@ -76,24 +80,81 @@ client.on('message', async msg => {
 
     ////
     try {
-        if (msg.content.startsWith(prefix.all)) {
-            const cmd = msg.content.substring(prefix.all.length).split(' ');
+        if (msg.content.startsWith(prefix.test)) {
+            const cmd = msg.content.substring(prefix.test.length).split(' ');
             switch (cmd[0]) {
-                ///Ping
-                case 'ping':
-                    msg.channel.send('Caculating ping . . .').then(resultMessage => {
-                        const ping = resultMessage.createdTimestamp - msg.createdTimestamp
-                        const emb_ping = new MessageEmbed()
+                ///Botinfo
+                case 'botinfo':
+                    msg.channel.send('看到這行的人可以獲得一塊餅乾 ฅ ^• ω •^ ฅ').then(resultMessage => {
+                        const ping = (resultMessage.createdTimestamp - msg.createdTimestamp)
+                        const emb_botinfo = new Discord.MessageEmbed()
                             .setColor('#4169e1')
-                            .setTitle('🏓 Pong !')
-                            .setDescription('\u200B')
+                            .setTitle(`Bot info`)
+                            .addFields({ name: `**Login Platform :**`, value: `\`${login_info}\`` })
                             .addFields({ name: `Bot latency :`, value: `\`${ping} ms\`` })
                             .addFields({ name: `API Latency :`, value: `\`${client.ws.ping} ms\`` })
+                            .addFields({ name: `Uptime :`, value: `\`${prettyMS(client.uptime)}\`\nSince \`${func.TWtime()}\`` })
+                            .setFooter(`V ${version}`)
                             .setTimestamp();
                         resultMessage.delete();
-                        resultMessage.channel.send(emb_ping);
+                        resultMessage.channel.send(emb_botinfo);
                     });
                     break;
+                case 'embed':
+                    const emb = new Discord.MessageEmbed()
+                        .setColor('#4169e1')
+                        .setTitle(`Bot info`)
+                        .addFields({ name: `(test)[https://github.com/]`, value: `test` })
+                        .setFooter(`QwQ`)
+                        .setTimestamp();
+                    msg.channel.send(emb)
+                    break;
+                case 'test':
+                    msg.channel.send('QwQ')
+                    const page1 = new Discord.MessageEmbed()
+                        .setColor('#ADD8E6')
+                        .setTitle(`embed title 1`)
+                        .setDescription(`Discription`)
+                        .addFields(
+                            { name: `Title`, value: `text here`, inline: true },
+                        )
+
+                    const page2 = new Discord.MessageEmbed()
+                        .setColor('#ADD8E6')
+                        .setTitle(`embed title 2`)
+                        .setDescription(`Discription`)
+                        .addFields(
+                            { name: `Title`, value: `text here`, inline: true },
+                        )
+
+                    const page3 = new Discord.MessageEmbed()
+                        .setColor('#ADD8E6')
+                        .setTitle(`embed title 3`)
+                        .setDescription(`Discription`)
+                        .addFields(
+                            { name: `Title`, value: `text here`, inline: true },
+                        )
+
+
+                    var pages = [
+                        page1,
+                        page2,
+                        page3
+                    ]
+
+                    mag.channel.send(paginationEmbed(msg, pages, timeout))
+                    break;
+
+
+                case 'help':
+                case 'h':
+
+                    break;
+
+                default:
+
+                    break;
+
             }
         };
 

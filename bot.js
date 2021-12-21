@@ -91,10 +91,29 @@ client.on('message', async msg => {
                             .addFields({ name: `**Login Platform :**`, value: `\`${login_info}\`` })
                             .addFields({ name: `Bot latency :`, value: `\`${ping} ms\`` })
                             .addFields({ name: `API Latency :`, value: `\`${client.ws.ping} ms\`` })
-                            .setFooter(`V ${version}\nUptime : ${prettyMS(client.uptime)}`)
+                            .addFields({ name: `Uptime :`, value: `${prettyMS(client.uptime)}\nSince ${func.TWtime()}` })
+                            .addFields({ name: `Invite me to your server! Link below :arrow_down_small:`, value: `[ฅ ^• ω •^ ฅ](https://discord.com/api/oauth2/authorize?client_id=910897168615895050&scope=bot&permissions=8)` })
+                            .setFooter(`V ${version}`)
                             .setTimestamp();
                         resultMessage.delete();
                         resultMessage.channel.send(emb_botinfo);
+                    });
+                    break;
+
+
+                //Invite bot
+                case 'invitebot':
+                    msg.channel.send({
+                        embed: {
+                            color: "#00FF00",
+                            description: "***Add Siri to your server !***",
+                            fields: [
+                                {
+                                    name: 'Link below :arrow_down_small:',
+                                    value: '**[ฅ ^• ω •^ ฅ](https://discord.com/api/oauth2/authorize?client_id=859355917988397058&permissions=8&scope=bot)**',
+                                },
+                            ],
+                        }
                     });
                     break;
             }
