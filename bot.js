@@ -71,7 +71,6 @@ client.on('message', async msg => {
                         const emb_ping = new Discord.MessageEmbed()
                             .setColor('#4169e1')
                             .setTitle('🏓 Pong !')
-                            .setDescription('\u200B')
                             .addFields({ name: `Bot latency :`, value: `\`${ping} ms\`` })
                             .addFields({ name: `API Latency :`, value: `\`${client.ws.ping} ms\`` })
                             .setTimestamp();
@@ -84,7 +83,29 @@ client.on('message', async msg => {
                 ///Botinfo
                 case 'botinfo':
                     msg.channel.send('看到這行的人可以獲得一塊餅乾 ฅ ^• ω •^ ฅ').then(resultMessage => {
-                        const ping = (resultMessage.createdTimestamp - msg.createdTimestamp)
+                        let networkLatency = (resultMessage.createdTimestamp - msg.createdTimestamp);
+                        let apiLatency = (client.ws.ping)
+                        let latency = networkLatency + apiLatency;
+                        let emoji
+                        let emojitext
+                        switch (true) {
+                            case (latency < 100):
+                                emoji = ":laughing:";
+                                emojitext = "Very good !";
+                                break;
+                            case (latency < 500):
+                                emoji = ":confused:";
+                                emojitext = "Uh, A bit laggy ...";
+                                break;
+                            case (latency < 1000):
+                                emoji = ":confounded:";
+                                emojitext = "It looks like we have a bad network connection ...";
+                                break;
+                            default:
+                                emoji = ":exploding_head:";
+                                emojitext = "Oh my, it looks terrible !\n***Kind reminder :***\n***Check if u are under the sea !***";
+                                break;
+                        }
                         msg.channel.send({
                             embed: {
                                 color: '#4169e1',
@@ -96,39 +117,56 @@ client.on('message', async msg => {
                                         inline: false
                                     },
                                     {
-                                        name: `Network latency :`,
-                                        value: `\`${ping} ms\``,
-                                        inline: false
+                                        name: `API Latency :\u200b\u200b\u200b\u200b`,
+                                        value: `\`${apiLatency} ms\``,
+                                        inline: true
                                     },
                                     {
-                                        name: `API Latency :`,
-                                        value: `\`${client.ws.ping} ms\``,
+                                        name: `Network latency :`,
+                                        value: `\`${networkLatency} ms\``,
+                                        inline: true
+                                    },
+                                    {
+                                        name: `Rate : ${emoji}`,
+                                        value: emojitext,
                                         inline: true
                                     },
                                     {
                                         name: `Uptime :`,
-                                        value: `${prettyMS(client.uptime)}\nSince ${func.TWtime()}`,
-                                        inline: false
+                                        value: `\`${prettyMS(client.uptime)}\``,
+                                        inline: true
+                                    },
+                                    {
+                                        name: `Start time :`,
+                                        value: `\`${func.TWtime().time}\`\n\`${func.TWtime().gmt}\``,
+                                        inline: true
+                                    },
+                                    {
+                                        name: `\u200b`,
+                                        value: `\u200b`,
+                                        inline: true
                                     }
                                 ],
                                 footer: {
                                     text: `V ${version}`
                                 }
                             }
-                        }).then(invite => {
+                        }).then(deleteMessage => {
+                            resultMessage.delete();
+                        }).then(sendInviteLink => {
                             msg.channel.send({
                                 embed: {
                                     color: "#00FF00",
-                                    description: "Add Siri to your server !",
+                                    title: "Invite Siri to your server!",
                                     fields: [
                                         {
-                                            name: `Invite Siri to your server! Link below :arrow_down_small:`,
+                                            name: `Link below :arrow_down_small:`,
                                             value: `[ฅ ^• ω •^ ฅ](https://discord.com/api/oauth2/authorize?client_id=910897168615895050&scope=bot&permissions=8)`
                                         },
                                     ],
                                 }
                             });
-                        })
+                        });
                     });
                     break;
 

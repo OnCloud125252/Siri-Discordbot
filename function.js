@@ -59,31 +59,47 @@ export function scamadviser(method, domain) {
 
 ///Get time (GMT+8)
 /*Example*\
-console.log(TWtime());
+console.log(TWtime().full);
 
 /*Output*\
-@Type: Number
-└>TimeZone: Asia/Taipei
+@Type: String
+└>full => Timestring with gmt timezone  EX: 2021/01/01 下午12:00:00 (GMT+8)
+└>time => Timestring  EX: 2021/01/01 下午12:00:00
+└>gmt => (GMT+8)
+└>timeZone => Asia/Taipei
 \*/
 export function TWtime() {
     let dateObject_TW = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
     let TimeString = `${dateObject_TW}`;
-    return TimeString + ' (GMT+8)';
+    return {
+        full: TimeString + ' (GMT+8)',
+        time: TimeString,
+        gmt: '(GMT+8)',
+        timeZone: 'Asia/Taipei'
+    }
 };
 
 
 ///Get time (GMT+0)
 /*Example*\
-console.log(Wtime());
+console.log(Wtime().full);
 
 /*Output*\
-@Type: Number
-└>TimeZone: Europe/London
+@Type: String
+└>full => Timestring with gmt timezone  EX: 2021/01/01 下午12:00:00 (GMT+0)
+└>time => Timestring  EX: 2021/01/01 下午12:00:00
+└>gmt => (GMT+0)
+└>timeZone => Europe/London
 \*/
 export function Wtime() {
     let dateObject_W = new Date().toLocaleString('zh-TW', { timeZone: 'Europe/London' });
     let WTimeString = `${dateObject_W}`;
-    return WTimeString;
+    return {
+        full: WTimeString + ' (GMT+0)',
+        time: WTimeString,
+        gmt: '(GMT+0)',
+        timeZone: 'Europe/London'
+    }
 };
 
 
@@ -241,7 +257,8 @@ export function check(links) {
         "discord.com",
         "discord.gg",
         "store.steampowered.com",
-        "google.com"
+        "google.com",
+        "support.discord.com"
     ];
     const filter = [
         "discord",

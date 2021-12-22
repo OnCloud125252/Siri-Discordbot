@@ -96,60 +96,13 @@ client.on('message', async msg => {
                             .addFields({ name: `Uptime :`, value: `\`${prettyMS(client.uptime)}\`\nSince \`${func.TWtime()}\`` })
                             .setFooter(`V ${version}`)
                             .setTimestamp();
-                        resultMessage.delete();
                         resultMessage.channel.send(emb_botinfo);
-                    });
+                    }).then(deleteMessage => resultMessage.delete());
                     break;
-                    
+
 
                 case 'testemb':
-                    msg.channel.send('看到這行的人可以獲得一塊餅乾 ฅ ^• ω •^ ฅ').then(resultMessage => {
-                        const ping = (resultMessage.createdTimestamp - msg.createdTimestamp)
-                        msg.channel.send({
-                            embed: {
-                                color: '#4169e1',
-                                title: 'Bot info',
-                                fields: [
-                                    {
-                                        name: `**Login Platform :**`,
-                                        value: `\`${login_info}\``,
-                                        inline: false
-                                    },
-                                    {
-                                        name: `Network latency :`,
-                                        value: `\`${ping} ms\``,
-                                        inline: false
-                                    },
-                                    {
-                                        name: `API Latency :`,
-                                        value: `\`${client.ws.ping} ms\``,
-                                        inline: true
-                                    },
-                                    {
-                                        name: `Uptime :`,
-                                        value: `\`${prettyMS(client.uptime)}\`\nSince ${func.TWtime()}`,
-                                        inline: false
-                                    }
-                                ],
-                                footer: {
-                                    text: `V ${version}`
-                                }
-                            }
-                        }).then(invitelink => {
-                            msg.channel.send({
-                                embed: {
-                                    color: "#00FF00",
-                                    title: "Invite Siri to your server!",
-                                    fields: [
-                                        {
-                                            name: `Link below :arrow_down_small:`,
-                                            value: `[ฅ ^• ω •^ ฅ](https://discord.com/api/oauth2/authorize?client_id=910897168615895050&scope=bot&permissions=8)`
-                                        },
-                                    ],
-                                }
-                            });
-                        })
-                    });
+
                     break;
 
 
