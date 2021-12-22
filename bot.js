@@ -85,18 +85,50 @@ client.on('message', async msg => {
                 case 'botinfo':
                     msg.channel.send('看到這行的人可以獲得一塊餅乾 ฅ ^• ω •^ ฅ').then(resultMessage => {
                         const ping = (resultMessage.createdTimestamp - msg.createdTimestamp)
-                        const emb_botinfo = new Discord.MessageEmbed()
-                            .setColor('#4169e1')
-                            .setTitle(`Bot info`)
-                            .addFields({ name: `**Login Platform :**`, value: `\`${login_info}\`` })
-                            .addFields({ name: `Bot latency :`, value: `\`${ping} ms\`` })
-                            .addFields({ name: `API Latency :`, value: `\`${client.ws.ping} ms\`` })
-                            .addFields({ name: `Uptime :`, value: `${prettyMS(client.uptime)}\nSince ${func.TWtime()}` })
-                            .addFields({ name: `Invite me to your server! Link below :arrow_down_small:`, value: `[ฅ ^• ω •^ ฅ](https://discord.com/api/oauth2/authorize?client_id=910897168615895050&scope=bot&permissions=8)` })
-                            .setFooter(`V ${version}`)
-                            .setTimestamp();
-                        resultMessage.delete();
-                        resultMessage.channel.send(emb_botinfo);
+                        msg.channel.send({
+                            embed: {
+                                color: '#4169e1',
+                                title: 'Bot info',
+                                fields: [
+                                    {
+                                        name: `**Login Platform :**`,
+                                        value: `\`${login_info}\``,
+                                        inline: false
+                                    },
+                                    {
+                                        name: `Network latency :`,
+                                        value: `\`${ping} ms\``,
+                                        inline: false
+                                    },
+                                    {
+                                        name: `API Latency :`,
+                                        value: `\`${client.ws.ping} ms\``,
+                                        inline: true
+                                    },
+                                    {
+                                        name: `Uptime :`,
+                                        value: `${prettyMS(client.uptime)}\nSince ${func.TWtime()}`,
+                                        inline: false
+                                    }
+                                ],
+                                footer: {
+                                    text: `V ${version}`
+                                }
+                            }
+                        }).then(invite => {
+                            msg.channel.send({
+                                embed: {
+                                    color: "#00FF00",
+                                    description: "Add Siri to your server !",
+                                    fields: [
+                                        {
+                                            name: `Invite Siri to your server! Link below :arrow_down_small:`,
+                                            value: `[ฅ ^• ω •^ ฅ](https://discord.com/api/oauth2/authorize?client_id=910897168615895050&scope=bot&permissions=8)`
+                                        },
+                                    ],
+                                }
+                            });
+                        })
                     });
                     break;
 
@@ -106,11 +138,11 @@ client.on('message', async msg => {
                     msg.channel.send({
                         embed: {
                             color: "#00FF00",
-                            description: "***Add Siri to your server !***",
+                            title: "Invite Siri to your server!",
                             fields: [
                                 {
-                                    name: 'Link below :arrow_down_small:',
-                                    value: '**[ฅ ^• ω •^ ฅ](https://discord.com/api/oauth2/authorize?client_id=859355917988397058&permissions=8&scope=bot)**',
+                                    name: `Link below :arrow_down_small:`,
+                                    value: `[ฅ ^• ω •^ ฅ](https://discord.com/api/oauth2/authorize?client_id=910897168615895050&scope=bot&permissions=8)`
                                 },
                             ],
                         }
