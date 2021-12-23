@@ -1,5 +1,5 @@
 const login_info = 'Heroku' //可修改  (Heroku/Terminal)
-const version = '1.0.0' //可修改  (版本)
+const version = '1.2.2' //可修改  (版本)
 
 import * as func from './function.js'
 import * as prefix from './prefix.js';
