@@ -1,5 +1,5 @@
 const login_info = 'Heroku' //可修改  (Heroku/Terminal)
-const version = '1.2.2' //可修改  (版本)
+const version = '1.2.3' //可修改  (版本)
 
 import * as func from './function.js'
 import * as prefix from './prefix.js';
@@ -30,7 +30,7 @@ else if (login_info === 'Heroku') {
 client.on('ready', () => {
     console.log(`User name :        ${client.user.tag}`);
     console.log(`Login platform :   ${login_info}`);
-    console.log(`Time :             ${func.TWtime()}`);
+    console.log(`Time :             ${func.TWtime().full}`);
     console.log(`Version :          V ${version}`);
     console.log();
     console.log("---------------------- Log ----------------------");
